@@ -3,170 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Memory Match</title>
-    <link rel="stylesheet" href="BOOTSTRAP ADDRESS HERE">
     <link rel="stylesheet" href="style.css">
     <link rel="index" href="about.html">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
+    <div class = "container">
+    <!-- (1) Game Menu Header -->
 
-<!-- (1) Game Menu Header -->
-
-    <div id = "game_head_cont">
-        <div id = "game_logo">
-            <p>Game Logo Placeholder</p>
-        </div>
-
-        <div id = "game_title">
-
-            <h1><strong>Pirates vs. Ninjas!</strong></h1>
-            <h3>Matching Game</h3>
-
-        </div>
-    </div>
-
-<!-- (2) Left Screen Stats Container -->
-    <div id= "left_screen_cont">
-        <h2 id = "left_stats">Stats:</h2>
-
-        <ul>
-            <div id = "games_played">
-                <h3 class = "left_info">Times Played:</h3>
+        <header id = "header_container">
+            <div id = "game_logo">
+                <p>Game Logo Placeholder</p>
             </div>
-
-            <div id = "attempts">
-                <h3 class = "left_info">Number of Tries:</h3>
+            <div id = "game_title">
+                <h1>Rick & Morty!</h1>
             </div>
-
-            <div id = "accuracy">
-                <h3 class = "left_info">Accuracy:</h3>
+            <div id = "nav_header">
+                <p>Settings</p>
             </div>
+        </header>
 
-            <div id = "button_reset_game" class = "reset">
-                <button>Reset Game</button>
+    <!-- (2) Left Screen Stats Container -->
+        <div id= "stats_container">
+            <h2 id = "left_stats">Stats:</h2>
+                <ul>
+                    <div id = "games_played">
+                        <h3 class = "left_info">Times Played:</h3>
+                    </div>
+
+                    <div id = "attempts">
+                        <h3 class = "left_info">Number of Tries:</h3>
+                    </div>
+
+                    <div id = "accuracy">
+                        <h3 class = "left_info">Accuracy:</h3>
+                    </div>
+
+                    <div id = "button_reset_game" class = "reset">
+                        <button>Reset Game</button>
+                    </div>
+                </ul>
+        </div>
+
+    <!-- (3) Game Area -->
+        <div id = "game_area_cont">
+            <div id = "row1">
+                <!-- Card Set 1 -->
+                <div class = "cards">
+                    <div class = "front"><img src="images/rick_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+
+                <div class = "cards">
+                    <div class = "front"><img src="images/rick_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+
+                <!-- Card Set 2 -->
+                <div class = "cards">
+                    <div class = "front"><img src="images/mortysmith_front.jpg"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <div class = "cards">
+                    <div class = "front"><img src="images/mortysmith_front.jpg"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
             </div>
-        </ul>
+        </div>
+
+
+        <footer id = "footer_container">
+            Footer About Me
+        </footer>
     </div>
-
-<!-- (3) Game Area -->
-    <div id = "game_area_cont">
-        <h3>Game Area</h3>
-
-        <!-- Card Set 1 -->
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-
-        <!-- Card Set 2 -->
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-
-        <!-- Card Set 3 -->
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-
-        <!-- Card Set 4 -->
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-
-        <!-- Card Set 5 -->
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-
-        <!-- Card Set 6 -->
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-
-        <!-- Card Set 7 -->
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-
-        <!-- Card Set 8 -->
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-
-        <!-- Card Set 9 -->
-        <div class = "cards">
-            <h3>Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-        <div class = "cards" >
-            <h3 >Cards</h3>
-            <div class = "front"></div>
-            <div class = "back" img src="http://orig07.deviantart.net/ceda/f/2008/170/7/a/pirates_vs_ninjas_debate_in_08_by_roboworks.jpg"></div>
-        </div>
-    </div>
-
-    <div id = "footer">
-
-
-    </div>
-
 </body>
 </html>
