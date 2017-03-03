@@ -2,7 +2,7 @@
 
 // v0.5 Global variables
 var first_card_clicked = null;
-var second_card_click = null;
+var second_card_clicked = null;
 var total_possible_matches = 2;
 var match_counter = 0;
 
@@ -12,29 +12,23 @@ var attempts = 0;
 var accuracy = 0;
 var games_played = 0;
 
-$(document).ready(function(){
+$(document).ready(initialize_game);
 
-    $(".back").click(function(){
-        card_clicked();
-        card_flipped(this);
-    });
-
-    /*  function initialGame() {
-
+     function initialize_game() {
+         initial_click_handler();
      }
 
-     function initialClickHandler() {
-     $(".back").click(handleClick);
+    function initial_click_handler() {
+        $('.cards').click(card_clicked);
+        $('#button_reset_game').click(reset_button);
      }
 
-     */
-
-    function card_flipped(card1, card2) {
-        $(card1).addClass('flipped');
-        $(card2).addClass('flipped');
-        console.log("Card flipped.");
+    // Function for reset button
+    function reset_button() {
+        console.log("Reset button was clicked.");
+        reset_stats();
+        display_stats();
     }
-
 
     // Function that displays the stats
     function display_stats() {
@@ -46,24 +40,25 @@ $(document).ready(function(){
 
     }
 
-    // Function for reset button
-    function reset_button() {
-
-    }
-
-
     // Show card when clicked function
-    function card_clicked(card1, card2) {
-       // card_flipped(card1);
+    function card_clicked() {
+        var first_card = this;
 
         if (first_card_clicked === null) {
+
             console.log("The first card was clicked.");
-            first_card_clicked = card1;
+            first_card_clicked = this;
+            $(first_card_clicked).find('.back').addClass('flipped');
+
         }
         else {
             console.log("The second card was clicked.");
-            second_card_click = card2;
-            if (first_card_clicked === second_card_click) {
+            second_card_clicked = this;
+            $(second_card_clicked).find('.back').addClass('flipped');
+
+            var second_card = this;
+
+            if (first_card === second_card) {
                 console.log("They match!");
 
                 // Add increment match counter
@@ -80,9 +75,7 @@ $(document).ready(function(){
             }
 
         }
-
     }
 
-});
 
 
