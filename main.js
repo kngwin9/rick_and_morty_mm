@@ -5,6 +5,8 @@ var first_card_clicked = null;
 var second_card_clicked = null;
 var total_possible_matches = 2;
 var match_counter = 0;
+var first_card = null;
+var second_card = null;
 
 // v1.0 Global variables
 var matches = 0;
@@ -42,7 +44,6 @@ $(document).ready(initialize_game);
 
     // Show card when clicked function
     function card_clicked() {
-        var first_card = this;
 
         if (first_card_clicked === null) {
 
@@ -50,16 +51,21 @@ $(document).ready(initialize_game);
             first_card_clicked = this;
             $(first_card_clicked).find('.back').addClass('flipped');
 
+          //  var first_card = this;
+            first_card = $(this).find('.front').find('img').attr('src');
+
         }
         else {
+
+          //  var second_card = this;
+            second_card = $(this).find('.front').find('img').attr('src');
+
             console.log("The second card was clicked.");
             second_card_clicked = this;
             $(second_card_clicked).find('.back').addClass('flipped');
 
-            var second_card = this;
-
             if (first_card === second_card) {
-                console.log("They match!");
+                console.log("They match.");
 
                 // Add increment match counter
                 if (match_counter === total_possible_matches) {
@@ -71,6 +77,7 @@ $(document).ready(initialize_game);
 
             }
             else {
+                console.log("They did not match.");
                 // Add waiting to 2 seconds part.
             }
 
