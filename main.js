@@ -7,7 +7,7 @@ var second_card_back = null;
 var total_possible_matches = 9;
 var match_counter = 0;
 var attempts = 0;
-var accuracy = (match_counter / attempts); // Need to fix, shows as NaN and not a number.
+var accuracy = 0; // Need to fix, shows as NaN and not a number.
 var games_played = 1;
 
 $(document).ready(initialize_game);
@@ -55,6 +55,13 @@ function reset_stats() {
 // Function that flips the card back.
 function card_flipback() {
     $('.back').removeClass('flipped');
+
+}
+
+// Flips individual unmatched cards back
+function single_card_flipback() {
+    $(first_card_back).find('.back').removeClass('flipped');
+    $(second_card_back).find('.back').removeClass('flipped');
 }
 
 // Show card when clicked function
@@ -67,7 +74,6 @@ function card_clicked() {
         first_card = $(this).find('.front').find('img').attr('src');
         attempts++;
     }
-
     else {
         console.log("The second card was clicked.");
         console.log("Attempts:" + attempts);
@@ -83,6 +89,7 @@ function card_clicked() {
             first_card_clicked = null;
             second_card_clicked = null;
             console.log("Match counter is at " + match_counter);
+            accuracy = ((match_counter / attempts) * 100).toFixed(2);
 
             // Match counter to win
             if (match_counter === total_possible_matches) {
@@ -96,11 +103,10 @@ function card_clicked() {
         // If cards do not match
         else {
             console.log("They did not match.");
-           // setTimeout(card_flipback, 800); // (first_card_clicked, second_card_clicked)
-            $(first_card_back).find('.back').removeClass('flipped');
-            $(second_card_back).find('.back').removeClass('flipped');
+            setTimeout(single_card_flipback, 650);
             first_card_clicked = null;
             second_card_clicked = null;
+
         }
     }
     display_stats();
