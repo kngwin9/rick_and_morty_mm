@@ -7,7 +7,7 @@ var second_card_back = null;
 var total_possible_matches = 9;
 var match_counter = 0;
 var attempts = 0;
-var accuracy = (match_counter / attempts);
+var accuracy = (match_counter / attempts); // Need to fix, shows as NaN and not a number.
 var games_played = 1;
 
 $(document).ready(initialize_game);
@@ -36,8 +36,8 @@ function display_stats() {
 function reset_button() {
     console.log("Reset button was clicked.");
     games_played++;
-    $('.back').removeClass('flipped');
     reset_stats();
+    card_flipback();
     // Reset button only works once right now without having to refresh the page, need to fix.
 }
 
@@ -52,27 +52,18 @@ function reset_stats() {
     display_stats();
 }
 
-// Function that flips the card back
-function card_flipback() {   // (first_card, second_card)
-
+// Function that flips the card back.
+function card_flipback() {
     $('.back').removeClass('flipped');
-    // $('.back').find(second_card).removeClass('flipped');
-    // first_card_back = $(this).find('.back').removeClass('flipped');
-    // second_card_back = $(this).find('.back').removeClass('flipped');
-    // var first_card_back = $(first_card).find('.back');
-    // var second_card_back = $(second_card).find('.back');
-    // $(first_card_back).removeClass('.flipped');
-    // $(second_card).removeClass('.flipped');
 }
 
 // Show card when clicked function
 function card_clicked() {
-
-
     if (first_card_clicked === null) {
         console.log("The first card was clicked.");
         first_card_clicked = this;
         $(first_card_clicked).find('.back').addClass('flipped');
+        first_card_back = first_card_clicked;
         first_card = $(this).find('.front').find('img').attr('src');
         attempts++;
     }
@@ -81,6 +72,7 @@ function card_clicked() {
         console.log("The second card was clicked.");
         console.log("Attempts:" + attempts);
         second_card_clicked = this;
+        second_card_back = second_card_clicked;
         $(second_card_clicked).find('.back').addClass('flipped');
         second_card = $(this).find('.front').find('img').attr('src');
 
@@ -104,7 +96,9 @@ function card_clicked() {
         // If cards do not match
         else {
             console.log("They did not match.");
-            setTimeout(card_flipback, 800); // (first_card_clicked, second_card_clicked)
+           // setTimeout(card_flipback, 800); // (first_card_clicked, second_card_clicked)
+            $(first_card_back).find('.back').removeClass('flipped');
+            $(second_card_back).find('.back').removeClass('flipped');
             first_card_clicked = null;
             second_card_clicked = null;
         }
@@ -112,11 +106,7 @@ function card_clicked() {
     display_stats();
 }
 
-// Randomize/shuffles the cards
+// Wanted to add a randomize/shuffles the cards
 function randomize_cards() {
 
 }
-
-
-
-
