@@ -1,88 +1,122 @@
-// Created by kngwin9 on 2/23/17
-
-// v0.5 Global variables
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches = 2;
-var match_counter = 0;
 var first_card = null;
 var second_card = null;
-
-// v1.0 Global variables
-var matches = 0;
+var first_card_back = null;
+var second_card_back = null;
+var total_possible_matches = 9;
+var match_counter = 0;
 var attempts = 0;
-var accuracy = 0;
-var games_played = 0;
+var accuracy = (match_counter / attempts);
+var games_played = 1;
 
 $(document).ready(initialize_game);
 
-     function initialize_game() {
-         initial_click_handler();
-     }
+// Initializes the game
+function initialize_game() {
+    initial_click_handler();
+    display_stats();
+}
 
-    function initial_click_handler() {
-        $('.cards').click(card_clicked);
-        $('#button_reset_game').click(reset_button);
-     }
+// For click handlers
+function initial_click_handler() {
+    $('.cards').click(card_clicked);
+    $('#button_reset_game').click(reset_button);
+}
 
-    // Function for reset button
-    function reset_button() {
-        console.log("Reset button was clicked.");
-        reset_stats();
-        display_stats();
+// Displays the stats
+function display_stats() {
+    console.log('Stats have been displayed.');
+    $('#times_played').text(games_played);
+    $('#attempts_p').text(attempts);
+    $('#accuracy_p').text(accuracy + "%");
+}
+
+// For reset button
+function reset_button() {
+    console.log("Reset button was clicked.");
+    games_played++;
+    $('.back').removeClass('flipped');
+    reset_stats();
+    // Reset button only works once right now without having to refresh the page, need to fix.
+}
+
+// Function that resets the stats
+function reset_stats() {
+    accuracy = 0;
+    match_counter = 0;
+    attempts = 0;
+    first_card_clicked = null;
+    second_card_clicked = null;
+    randomize_cards();
+    display_stats();
+}
+
+// Function that flips the card back
+function card_flipback() {   // (first_card, second_card)
+
+    $('.back').removeClass('flipped');
+    // $('.back').find(second_card).removeClass('flipped');
+    // first_card_back = $(this).find('.back').removeClass('flipped');
+    // second_card_back = $(this).find('.back').removeClass('flipped');
+    // var first_card_back = $(first_card).find('.back');
+    // var second_card_back = $(second_card).find('.back');
+    // $(first_card_back).removeClass('.flipped');
+    // $(second_card).removeClass('.flipped');
+}
+
+// Show card when clicked function
+function card_clicked() {
+
+
+    if (first_card_clicked === null) {
+        console.log("The first card was clicked.");
+        first_card_clicked = this;
+        $(first_card_clicked).find('.back').addClass('flipped');
+        first_card = $(this).find('.front').find('img').attr('src');
+        attempts++;
     }
 
-    // Function that displays the stats
-    function display_stats() {
+    else {
+        console.log("The second card was clicked.");
+        console.log("Attempts:" + attempts);
+        second_card_clicked = this;
+        $(second_card_clicked).find('.back').addClass('flipped');
+        second_card = $(this).find('.front').find('img').attr('src');
 
-    }
+        // First and second card comparison
+        if (first_card === second_card) {
+            console.log("They match.");
+            match_counter++;
+            first_card_clicked = null;
+            second_card_clicked = null;
+            console.log("Match counter is at " + match_counter);
 
-    // Function that resets the stats
-    function reset_stats() {
-
-    }
-
-    // Show card when clicked function
-    function card_clicked() {
-
-        if (first_card_clicked === null) {
-
-            console.log("The first card was clicked.");
-            first_card_clicked = this;
-            $(first_card_clicked).find('.back').addClass('flipped');
-
-          //  var first_card = this;
-            first_card = $(this).find('.front').find('img').attr('src');
-
-        }
-        else {
-
-          //  var second_card = this;
-            second_card = $(this).find('.front').find('img').attr('src');
-
-            console.log("The second card was clicked.");
-            second_card_clicked = this;
-            $(second_card_clicked).find('.back').addClass('flipped');
-
-            if (first_card === second_card) {
-                console.log("They match.");
-
-                // Add increment match counter
-                if (match_counter === total_possible_matches) {
-                    // Add display message to user
-                }
-                else {
-                    // Add click functionality is complete, return.
-                }
-
+            // Match counter to win
+            if (match_counter === total_possible_matches) {
+                window.alert("You Win!")
             }
             else {
-                console.log("They did not match.");
-                // Add waiting to 2 seconds part.
+                return "Keep Going."
             }
+        }
 
+        // If cards do not match
+        else {
+            console.log("They did not match.");
+            setTimeout(card_flipback, 800); // (first_card_clicked, second_card_clicked)
+            first_card_clicked = null;
+            second_card_clicked = null;
         }
     }
+    display_stats();
+}
+
+// Randomize/shuffles the cards
+function randomize_cards() {
+
+}
+
 
 
 

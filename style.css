@@ -1,7 +1,7 @@
 body {
-    background-color: black;
     background-image: url(images/rickandmorty_background1.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container {
@@ -13,9 +13,10 @@ header, footer {
     width: 100%;
     padding: 1em;
     color: white;
-    background-color: black;
     clear: left;
     text-align: center;
+    font-family: rickandmortyfont;
+    font-size: 20px;
 }
 
 #header_container {
@@ -24,41 +25,54 @@ header, footer {
 }
 
 #game_logo {
-    border: white solid 2px;
     text-align: center;
+    width: 10%;
+    height: 11vw;
+    background-image: url(images/rickandmorty_logo2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150% 100%;
+    margin-left: 3.5%;
+
 }
 
 #game_title {
-    border: white solid 2px;
-    text-align: center;
     margin: auto;
-    display: flex;
-    flex-flow: row wrap;
+    margin-left: 0.5%;
+    margin-top: 1%;
+    width: 70%;
+    height: 11vw;
+    background-image: url(images/rickandmorty_banner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65% 100%;
 }
 
 #nav_header {
-    border: white solid 2px;
+
 }
 
 #stats_container {
     float: left;
     margin: 1%;
-    padding: 1em;
+    padding: 0.5em;
     width: 15vw;
     height: 80vh;
-    border: 2px solid;
-    background-color: white;
+    font-family: rickandmortyfont;
+    font-size: 20px;
+}
+
+#games_played, #attempts, #accuracy {
 
 }
 
 /* (3) Game Area */
 #game_area_cont {
-    margin: 1%;
-    margin-left: 5px;
+    margin: 2%;
+    margin-left: 1.5%;
     padding: 1em;
-    background: white;
     height: 20%;
-    margin-top: 80px;
+    margin-top: -0.5%;
     position: relative;
 }
 
@@ -79,17 +93,34 @@ header, footer {
 
 img {
     margin: 1%;
-    height: 190px;
-    width: 145px;
+    height: 21vh;
+    width: 7.5vw;
     display: inline-block;
-
+    border-radius: 20px;
 }
 
 .flipped {
     position: static;
+}
 
+.matched {
+    display: none;
 }
 
 #footer {
 
+}
+
+button {
+    font-family: rickandmortyfont;
+    font-size: 16px;
+    margin-top: 10%;
+    padding: 10px 15px;
+    opacity: 0.9;
+}
+
+@font-face {
+    font-family: 'rickandmortyfont';
+    src: url('font/rickandmortyfont2.ttf')
+    format('truetype')
 }
