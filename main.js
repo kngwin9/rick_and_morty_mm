@@ -89,7 +89,7 @@ function card_clicked() {
             first_card_clicked = null;
             second_card_clicked = null;
             console.log("Match counter is at " + match_counter);
-            accuracy = ((match_counter / attempts) * 100).toFixed(2);
+            accuracy = ((match_counter / attempts) * 100).toFixed(0);
 
             // Match counter to win
             if (match_counter === total_possible_matches) {
