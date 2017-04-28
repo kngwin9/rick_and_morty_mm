@@ -1,0 +1,126 @@
+body {
+    background-image: url(images/rickandmorty_background1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display:flex;
+    flex-flow: row wrap;
+}
+
+header, footer {
+    width: 100%;
+    padding: 1em;
+    color: white;
+    clear: left;
+    text-align: center;
+    font-family: rickandmortyfont;
+    font-size: 20px;
+}
+
+#header_container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#game_logo {
+    text-align: center;
+    width: 10%;
+    height: 11vw;
+    background-image: url(images/rickandmorty_logo2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150% 100%;
+    margin-left: 3.5%;
+
+}
+
+#game_title {
+    margin: auto;
+    margin-left: 0.5%;
+    margin-top: 1%;
+    width: 70%;
+    height: 11vw;
+    background-image: url(images/rickandmorty_banner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65% 100%;
+}
+
+#nav_header {
+
+}
+
+#stats_container {
+    float: left;
+    margin: 1%;
+    padding: 0.5em;
+    width: 15vw;
+    height: 80vh;
+    font-family: rickandmortyfont;
+    font-size: 20px;
+}
+
+#games_played, #attempts, #accuracy {
+
+}
+
+/* (3) Game Area */
+#game_area_cont {
+    margin: 2%;
+    margin-left: 1.5%;
+    padding: 1em;
+    height: 20%;
+    margin-top: -0.5%;
+    position: relative;
+}
+
+.front {
+    position: absolute;
+
+}
+
+.back {
+    position: relative;
+
+}
+
+.cards {
+    display: inline-block;
+    left: 1%;
+}
+
+img {
+    margin: 1%;
+    height: 21vh;
+    width: 7.5vw;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.flipped {
+    position: static;
+}
+
+.matched {
+    display: none;
+}
+
+#footer {
+
+}
+
+button {
+    font-family: rickandmortyfont;
+    font-size: 15px;
+    margin-top: 10%;
+    padding: 10px 15px;
+    opacity: 0.8;
+}
+
+@font-face {
+    font-family: 'rickandmortyfont';
+    src: url('font/rickandmortyfont2.ttf')
+    format('truetype')
+}

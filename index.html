@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Match</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="index" href="about.html">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+<div>
+    <div class = "container">
+
+    <!-- (1) Game Menu Header -->
+        <header id = "header_container">
+            <div id = "game_logo"></div>
+            <div id = "game_title"></div>
+            <div id = "nav_header">
+                <a href="about.html">A b o u t M e</a>
+            </div>
+        </header>
+
+    <!-- (2) Left Screen Stats Container -->
+        <div id= "stats_container">
+            <h2 id = "left_stats">S t a t s :</h2>
+                <ul>
+                    <div id = "games_played">
+                        <h3 class = "left_info">Times Played :</h3>
+                        <p id = "times_played"></p>
+                    </div>
+
+                    <div id = "attempts">
+                        <h3 class = "left_info">Attempts :</h3>
+                        <p id = "attempts_p"></p>
+                    </div>
+
+                    <div id = "accuracy">
+                        <h3 class = "left_info">Accuracy :</h3>
+                        <p id = "accuracy_p"></p>
+                    </div>
+
+                    <div id = "button_reset_game" class = "reset">
+                        <button>R e s e t G a m e</button>
+                    </div>
+                    <div id = "button_settings" class = "reset">
+                        <button>S e t t i n g s</button>
+                    </div>
+                </ul>
+        </div>
+
+    <!-- (3) Game Area -->
+        <div id = "game_area_cont">
+            <div class = "rows">
+                <!-- Card Set 1 -->
+                <div class = "cards">
+                    <div class = "front"><img src="images/rick_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <div class = "cards">
+                    <div class = "front"><img src="images/rick_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <!-- Card Set 2 -->
+                <div class = "cards">
+                    <div class = "front"><img src="images/mortysmith_front.jpg"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <div class = "cards">
+                    <div class = "front"><img src="images/mortysmith_front.jpg"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <!-- Card Set 3 -->
+                <div class = "cards">
+                    <div class = "front"><img src="images/presidentminiverse_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <div class = "cards">
+                    <div class = "front"><img src="images/presidentminiverse_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+            </div>
+
+            <div class ="rows">
+                <!-- Card Set 4 -->
+                <div class = "cards">
+                    <div class = "front"><img src="images/birdperson3_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <div class = "cards">
+                    <div class = "front"><img src="images/birdperson3_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <!-- Card Set 5 -->
+                <div class = "cards">
+                    <div class = "front"><img src="images/mrmeseeks_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <div class = "cards">
+                    <div class = "front"><img src="images/mrmeseeks_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <!-- Card Set 6 -->
+                <div class = "cards">
+                    <div class = "front"><img src="images/gromflomite_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <div class = "cards">
+                    <div class = "front"><img src="images/gromflomite_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+            </div>
+
+            <div class = "rows">
+                <!-- Card Set 7 -->
+                <div class = "cards">
+                    <div class = "front"><img src="images/zeep_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <div class = "cards">
+                    <div class = "front"><img src="images/zeep_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <!-- Card Set 8 -->
+                <div class = "cards">
+                    <div class = "front"><img src="images/snowball_front.jpg"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <div class = "cards">
+                    <div class = "front"><img src="images/snowball_front.jpg"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <!-- Card Set 9 -->
+                <div class = "cards">
+                    <div class = "front"><img src="images/summersmith_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+                <div class = "cards" >
+                    <div class = "front"><img src="images/summersmith_front.png"></div>
+                    <div class = "back"><img src="images/rickandmorty_cardback.jpg"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer id = "footer_container">
+
+        </footer>
+
+    </div>
+</body>
+</html>
