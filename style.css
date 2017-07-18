@@ -3,14 +3,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
 }
-
 .container {
     display:flex;
     flex-flow: row wrap;
 }
-
 header {
     width: 100%;
     padding: 1em;
@@ -58,10 +55,6 @@ header {
     height: 75%;
     font-family: rickandmortyfont;
     font-size: 20px;
-}
-
-#games_played, #attempts, #accuracy {
-
 }
 
 /* (3) Game Area */
@@ -120,11 +113,9 @@ button {
     format('truetype')
 }
 
-@media only screen and (max-height: 400px) {
-    body {
-        background-image: url(images/rickandmorty_background1.jpg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-attachment: fixed;
+@media only screen and (max-height: 750px) {
+    .container{
+        height: 100%;
     }
+
 }

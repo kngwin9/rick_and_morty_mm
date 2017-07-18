@@ -1,14 +1,14 @@
-var first_card_clicked = null;
-var second_card_clicked = null;
-var first_card = null;
-var second_card = null;
-var first_card_back = null;
-var second_card_back = null;
-var total_possible_matches = 9;
-var match_counter = 0;
-var attempts = 0;
-var accuracy = 0; // Need to fix, shows as NaN and not a number.
-var games_played = 1;
+let first_card_clicked = null;
+let second_card_clicked = null;
+let first_card = null;
+let second_card = null;
+let first_card_back = null;
+let second_card_back = null;
+let total_possible_matches = 9;
+let match_counter = 0;
+let attempts = 0;
+let accuracy = 0; // Need to fix, shows as NaN and not a number.
+let games_played = 1;
 
 $(document).ready(initialize_game);
 
@@ -55,7 +55,6 @@ function reset_stats() {
 // Function that flips the card back.
 function card_flipback() {
     $('.back').removeClass('flipped');
-
 }
 
 // Flips individual unmatched cards back
@@ -106,7 +105,6 @@ function card_clicked() {
             setTimeout(single_card_flipback, 650);
             first_card_clicked = null;
             second_card_clicked = null;
-
         }
     }
     display_stats();
