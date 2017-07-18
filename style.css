@@ -11,8 +11,8 @@ body {
     flex-flow: row wrap;
 }
 
-header, footer {
-    width: 90%;
+header {
+    width: 100%;
     padding: 1em;
     color: white;
     clear: left;
@@ -42,7 +42,7 @@ header, footer {
     margin: auto;
     margin-left: 0.5%;
     margin-top: 1%;
-    width: 60%;
+    width: 70%;
     height: 11vw;
     background-image: url(images/rickandmorty_banner.png);
     background-repeat: no-repeat;
@@ -51,8 +51,8 @@ header, footer {
 }
 
 #stats_container {
-    float: left;
-    margin: 1%;
+    float: right;
+    margin-left: 16%;
     padding: 0.5em;
     width: 15vw;
     height: 75%;
@@ -66,11 +66,9 @@ header, footer {
 
 /* (3) Game Area */
 #game_area_cont {
-    margin: 2%;
-    margin-left: 1.5%;
-    padding: 1em;
-    height: 20%;
-    margin-top: -0.5%;
+    margin-left: 15%;
+    padding: 1%;
+    height: 18%;
     position: relative;
 }
 
@@ -122,9 +120,18 @@ button {
     format('truetype')
 }
 
-/*@media only screen and (max-height: 400px) {*/
-    /*#game_logo {*/
-        /*height: 150px;*/
-        /*width: 150px;*/
-    /*}*/
-/*}*/
+@media only screen and (max-height: 400px) {
+    body {
+        background-image: url(images/rickandmorty_background1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+        background-image: url(images/rickandmorty_background1.jpg);
+        background-position: 100%
+    }
+}
