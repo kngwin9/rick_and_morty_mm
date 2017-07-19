@@ -157,11 +157,7 @@ button {
     /*-o-backface-visibility: hidden;*/
     backface-visibility: hidden;
 }
-.card .back {
-    background: red;
-}
 .card .front {
-    background: blue;
     -webkit-transform: rotateY( 180deg );
     -moz-transform: rotateY( 180deg );
     -o-transform: rotateY( 180deg );
