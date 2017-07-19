@@ -5,8 +5,7 @@ body {
     background-attachment: fixed;
 }
 
-/*Header Start*/
-
+/* Header Start */
 #header-container {
     height: 180px;
     display: flex;
@@ -29,26 +28,15 @@ body {
     min-width: 200px;
     min-height: 200px;
 }
+/* Header End */
 
-/*Header End*/
-
-
-#stats_container {
-    float: right;
-    margin-left: 16%;
-    padding: 0.5em;
-    width: 15vw;
-    height: 75%;
-    font-family: rickandmortyfont;
-    font-size: 20px;
+#main-content {
+    display: flex;
 }
 
-/* (3) Game Area */
+/* Game Area */
 #game_area_cont {
-    margin-left: 15%;
-    padding: 1%;
-    height: 18%;
-    display: flex;
+    background-color: blue;
 }
 
 .front {
@@ -62,13 +50,11 @@ body {
 
 .cards {
     display: inline-block;
-    left: 1%;
 }
 
 img {
-    margin: 1%;
-    height: 21vh;
-    width: 7.5vw;
+    height: 150px;
+    width: 100px;
     display: inline-block;
     border-radius: 20px;
 }
@@ -81,6 +67,14 @@ img {
     display: none;
 }
 
+/* Stats Container */
+
+#stats_container {
+    font-family: rickandmortyfont;
+    background-color: #00A8FF;
+
+}
+
 button {
     font-family: rickandmortyfont;
     font-size: 15px;
@@ -89,13 +83,7 @@ button {
     opacity: 0.8;
 }
 
-@font-face {
-    font-family: 'rickandmortyfont';
-    src: url('font/rickandmortyfont2.ttf')
-    format('truetype')
-}
-
-/*Media Query*/
+/* Media Query */
 @media only screen and (max-width: 770px) {
     #header-container {
         height: 100px;
@@ -146,4 +134,11 @@ and (-webkit-device-pixel-ratio: 2) {
 @media screen and (min-device-width : 414px)
 and (-webkit-device-pixel-ratio: 3){
 
+}
+
+/*Font*/
+@font-face {
+    font-family: 'rickandmortyfont';
+    src: url('font/rickandmortyfont2.ttf')
+    format('truetype')
 }
