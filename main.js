@@ -119,4 +119,5 @@ function randomize_cards() {
 function card_flip() {
     console.log("testing card flip");
     $('.card').toggleClass('flipped');
+
 }
