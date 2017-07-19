@@ -4,48 +4,35 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
-.container {
-    display:flex;
-    flex-flow: row wrap;
-}
-header {
-    width: 100%;
-    padding: 1%;
-    color: white;
-    clear: left;
-    text-align: center;
-    font-family: rickandmortyfont;
-    font-size: 20px;
-}
 
-#header_container {
+/*Header Start*/
+#header-container {
+    height: 180px;
     display: flex;
-    flex-flow: row wrap;
 }
 
-#game_logo {
-    text-align: center;
-    width: 10%;
-    height: 10vw;
-    background-image: url(images/rickandmorty_logo2.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 150% 100%;
-    margin-left: 3.5%;
-
-}
-
-#game_title {
-    margin: auto;
-    margin-left: 0.5%;
-    margin-top: 1%;
-    width: 70%;
-    height: 11vw;
+#game-title {
     background-image: url(images/rickandmorty_banner.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 65% 100%;
+    background-size: 80vh 200px;
+    flex: 2;
 }
+
+#game-logo {
+    order: 2;
+    background-image: url(images/rickandmorty_logo2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 125% 80%;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+
+
+/*Header End*/
+
 
 #stats_container {
     float: right;
@@ -113,9 +100,56 @@ button {
     format('truetype')
 }
 
-@media only screen and (max-height: 750px) {
-    .container{
-        height: 100%;
+/*Media Query*/
+@media only screen and (max-width: 667px) {
+    #header-container {
+        height: 100px;
     }
+    #game-title {
+        background-image: url(images/rickandmorty_banner.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 300px;
+        flex: 2;
+    }
+    #game-logo {
+        order: 2;
+        background-image: url(images/rickandmorty_logo2.png);
+        background-repeat: no-repeat;
+        background-position: center;
+
+        min-width: 90px;
+        min-height: 70px;
+    }
+}
+
+
+    /*iPhone 6*/
+@media only screen and (max-device-width: 667px)
+and (-webkit-device-pixel-ratio: 2) {
+    #header-container {
+        height: 100px;
+    }
+    #game-title {
+        background-image: url(images/rickandmorty_banner.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 300px;
+        flex: 2;
+    }
+    #game-logo {
+        order: 2;
+        background-image: url(images/rickandmorty_logo2.png);
+        background-repeat: no-repeat;
+        background-position: center;
+
+        min-width: 90px;
+        min-height: 70px;
+    }
+}
+
+    /*iPhone 6 Plus*/
+@media screen and (min-device-width : 414px)
+and (-webkit-device-pixel-ratio: 3){
 
 }
