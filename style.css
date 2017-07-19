@@ -32,11 +32,23 @@ body {
 
 #main-content {
     display: flex;
+    background-color: red;
+    margin: auto;
+}
+
+#game_area_cont, #stats_container {
+    margin: 5%;
 }
 
 /* Game Area */
 #game_area_cont {
     background-color: blue;
+    flex: 2;
+
+}
+
+.rows {
+    margin-left: 25%;
 }
 
 .front {
@@ -72,6 +84,8 @@ img {
 #stats_container {
     font-family: rickandmortyfont;
     background-color: #00A8FF;
+    flex: 1;
+
 
 }
 
