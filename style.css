@@ -9,21 +9,23 @@ body {
 #header-container {
     height: 180px;
     display: flex;
+
 }
 
 #game-title {
     background-image: url(images/rickandmorty_banner.png);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
     background-size: 750px 200px;
-    flex: 2;
+    margin-left: -100px;
+    flex: 1;
 }
 
 #game-logo {
     order: 2;
     background-image: url(images/rickandmorty_logo2.png);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: right;
     background-size: 125% 80%;
     min-width: 200px;
     min-height: 200px;
@@ -32,23 +34,12 @@ body {
 
 #main-content {
     display: flex;
-    background-color: red;
-    margin: auto;
-}
-
-#game_area_cont, #stats_container {
-    margin: 5%;
 }
 
 /* Game Area */
 #game_area_cont {
-    background-color: blue;
-    flex: 2;
-
-}
-
-.rows {
-    margin-left: 25%;
+    width: 55%;
+    margin: 2% 8% 2% 10%;
 }
 
 .front {
@@ -65,8 +56,8 @@ body {
 }
 
 img {
-    height: 150px;
-    width: 100px;
+    height: 165px;
+    width: 120px;
     display: inline-block;
     border-radius: 20px;
 }
@@ -83,9 +74,8 @@ img {
 
 #stats_container {
     font-family: rickandmortyfont;
-    background-color: #00A8FF;
-    flex: 1;
-
+    font-size: 20px;
+    margin: 2% 8%;
 
 }
 
@@ -118,36 +108,6 @@ button {
         min-width: 90px;
         min-height: 70px;
     }
-}
-
-    /*iPhone 6*/
-@media only screen and (max-device-width: 667px)
-and (-webkit-device-pixel-ratio: 2) {
-    #header-container {
-        height: 100px;
-    }
-    #game-title {
-        background-image: url(images/rickandmorty_banner.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 300px;
-        flex: 2;
-    }
-    #game-logo {
-        order: 2;
-        background-image: url(images/rickandmorty_logo2.png);
-        background-repeat: no-repeat;
-        background-position: center;
-
-        min-width: 90px;
-        min-height: 70px;
-    }
-}
-
-    /*iPhone 6 Plus*/
-@media screen and (min-device-width : 414px)
-and (-webkit-device-pixel-ratio: 3){
-
 }
 
 /*Font*/
