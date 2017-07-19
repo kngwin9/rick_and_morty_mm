@@ -54,13 +54,13 @@ function reset_stats() {
 
 // Function that flips the card back.
 function card_flipback() {
-    $('.back').removeClass('flipped');
+    $('.back').removeClass('');
 }
 
 // Flips individual unmatched cards back
 function single_card_flipback() {
-    $(first_card_back).find('.back').removeClass('flipped');
-    $(second_card_back).find('.back').removeClass('flipped');
+    $(first_card_back).find('.back').toggleClass('flipper');
+    $(second_card_back).find('.back').toggleClass('flipper');
 }
 
 // Show card when clicked function
@@ -113,4 +113,10 @@ function card_clicked() {
 // Wanted to add a randomize/shuffles the cards
 function randomize_cards() {
 
+}
+
+// Card flip
+function card_flip() {
+    console.log("testing card flip");
+    $('.card').toggleClass('flipped');
 }
