@@ -37,7 +37,7 @@ function reset_button() {
     console.log("Reset button was clicked.");
     games_played++;
     reset_stats();
-    card_flipback();
+    // card_flipback();
     // Reset button only works once right now without having to refresh the page, need to fix.
 }
 
@@ -65,10 +65,11 @@ function reset_stats() {
 
 // Show card when clicked function
 function card_clicked() {
+    card_flip();
     if (first_card_clicked === null) {
         console.log("The first card was clicked.");
         first_card_clicked = this;
-        $(first_card_clicked).find('.back').addClass('flipped');
+        // $(first_card_clicked).find('.back').addClass('flipped');
         first_card_back = first_card_clicked;
         first_card = $(this).find('.front').find('img').attr('src');
         attempts++;
@@ -78,7 +79,7 @@ function card_clicked() {
         console.log("Attempts:" + attempts);
         second_card_clicked = this;
         second_card_back = second_card_clicked;
-        $(second_card_clicked).find('.back').addClass('flipped');
+        // $(second_card_clicked).find('.back').addClass('flipped');
         second_card = $(this).find('.front').find('img').attr('src');
 
         // First and second card comparison
@@ -102,7 +103,7 @@ function card_clicked() {
         // If cards do not match
         else {
             console.log("They did not match.");
-            setTimeout(single_card_flipback, 650);
+            // setTimeout(single_card_flipback, 650);
             first_card_clicked = null;
             second_card_clicked = null;
         }
@@ -119,5 +120,6 @@ function randomize_cards() {
 function card_flip() {
     console.log("testing card flip");
     $('.card').toggleClass('flipped');
+    // $(this).find('.card').toggleClass('flipped');
 
 }
