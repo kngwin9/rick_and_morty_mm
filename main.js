@@ -20,7 +20,7 @@ function initialize_game() {
 
 // For click handlers
 function initial_click_handler() {
-    $('.cards').click(card_clicked);
+    $('.card').click(card_clicked);
     $('#button_reset_game').click(reset_button);
 }
 
@@ -53,15 +53,15 @@ function reset_stats() {
 }
 
 // Function that flips the card back.
-function card_flipback() {
-    $('.back').removeClass('');
-}
+// function card_flipback() {
+//     $('.back').removeClass('');
+// }
 
 // Flips individual unmatched cards back
-function single_card_flipback() {
-    $(first_card_back).find('.back').toggleClass('flipper');
-    $(second_card_back).find('.back').toggleClass('flipper');
-}
+// function single_card_flipback() {
+//     $(first_card_back).find('.back').toggleClass('flipper');
+//     $(second_card_back).find('.back').toggleClass('flipper');
+// }
 
 // Show card when clicked function
 function card_clicked() {

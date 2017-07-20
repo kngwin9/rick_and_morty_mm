@@ -4,14 +4,17 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+#main-content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
 
 /* Header Start */
 #header-container {
     height: 180px;
     display: flex;
-
 }
-
 #game-title {
     background-image: url(images/rickandmorty_banner.png);
     background-repeat: no-repeat;
@@ -20,7 +23,6 @@ body {
     margin-left: -90px;
     flex: 1;
 }
-
 #game-logo {
     order: 2;
     background-image: url(images/rickandmorty_logo2.png);
@@ -30,64 +32,89 @@ body {
     min-width: 200px;
     min-height: 200px;
 }
-/* Header End */
-
-#main-content {
-    display: flex;
-}
 
 /* Game Area */
 .game-area-cont {
-    width: 55%;
-    margin: 2% 8% 2% 10%;
-}
+    margin-left: 10%;
+    display: flex;
+    max-width: 1000px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
+    /*margin: 2% 8% 2% 10%;*/
+}
 .front {
     position: absolute;
-    display: block;
 }
-
 .back {
-    position: relative;
 }
-
-.cards {
-    display: inline-block;
-}
-
 img {
     height: 165px;
     width: 120px;
-    display: inline-block;
+
     border-radius: 20px;
 }
-
-.flipped {
-    position: static;
-}
-
 .matched {
     display: none;
 }
 
-/* Stats Container */
+/* Card Flip Animation Start */
+.card {
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    /*-moz-transform-style: preserve-3d;*/
+    /*-o-transform-style: preserve-3d;*/
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+    /* Card Flip */
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    /*-o-perspective: 800px;*/
+    perspective: 800px;
+}
+.card div {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    /*-o-backface-visibility: hidden;*/
+    backface-visibility: hidden;
+}
+.card .front {
 
-.stats-container {
-    font-family: rickandmortyfont;
-    font-size: 20px;
-    margin: 2% 8%;
-
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+.card.flipped {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
 }
 
+/* Stats Container Start */
+.stats-container {
+    letter-spacing: 5px;
+    font-family: rickandmortyfont;
+    font-size: 23px;
+    margin: 2% 8%;
+    margin-left: 20%;
+}
 button {
     font-family: rickandmortyfont;
-    font-size: 15px;
-    margin-top: 10%;
-    padding: 10px 15px;
-    opacity: 0.8;
+    font-size: 23px;
+    height: 100%;
+    width: 100%;
+    margin: 5%;
+    padding: 5%;
+    letter-spacing: 5px;
 }
 
-/* Media Query */
+/* Media Queries */
 @media only screen and (max-width: 770px) {
     #header-container {
         height: 100px;
@@ -104,66 +131,17 @@ button {
         background-image: url(images/rickandmorty_logo2.png);
         background-repeat: no-repeat;
         background-position: center;
-
         min-width: 90px;
         min-height: 70px;
     }
 }
 
-/*Font*/
+/* Font */
 @font-face {
     font-family: 'rickandmortyfont';
     src: url('font/rickandmortyfont2.ttf')
     format('truetype')
 }
 
-/* Card Flip Animation */
-.container {
-    width: 200px;
-    height: 260px;
-    border: 1px solid #ccc;
-    -webkit-perspective: 800px;
-    -moz-perspective: 800px;
-    /*-o-perspective: 800px;*/
-    perspective: 800px;
-}
-.card {
-    width: 100%;
-    height: 100%;
-    -webkit-transition: -webkit-transform 1s;
-    -moz-transition: -moz-transform 1s;
-    -o-transition: -o-transform 1s;
-    transition: transform 1s;
-    -webkit-transform-style: preserve-3d;
-    /*-moz-transform-style: preserve-3d;*/
-    /*-o-transform-style: preserve-3d;*/
-    transform-style: preserve-3d;
-    -webkit-transform-origin: 50% 50%;
-}
-.card div {
-    display: block;
-    height: 100%;
-    width: 100%;
-    line-height: 260px;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 140px;
-    position: absolute;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    /*-o-backface-visibility: hidden;*/
-    backface-visibility: hidden;
-}
-.card .front {
-    -webkit-transform: rotateY( 180deg );
-    -moz-transform: rotateY( 180deg );
-    -o-transform: rotateY( 180deg );
-    transform: rotateY( 180deg );
-}
-.card.flipped {
-    -webkit-transform: rotateY( 180deg );
-    -moz-transform: rotateY( 180deg );
-    -o-transform: rotateY( 180deg );
-    transform: rotateY( 180deg );
-}
+
+
