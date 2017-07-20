@@ -16,6 +16,8 @@ $(document).ready(initialize_game);
 function initialize_game() {
     initial_click_handler();
     display_stats();
+    card_shuffle(cards);
+    deal_cards();
 }
 
 // For click handlers
@@ -48,7 +50,7 @@ function reset_stats() {
     attempts = 0;
     first_card_clicked = null;
     second_card_clicked = null;
-    randomize_cards();
+    card_shuffle();
     display_stats();
 }
 
@@ -70,6 +72,7 @@ function card_clicked() {
         console.log("The first card was clicked.");
         first_card_clicked = this;
         // $(first_card_clicked).find('.back').addClass('flipped');
+        // $('.card').toggleClass('flipped');
         first_card_back = first_card_clicked;
         first_card = $(this).find('.front').find('img').attr('src');
         attempts++;
@@ -78,6 +81,7 @@ function card_clicked() {
         console.log("The second card was clicked.");
         console.log("Attempts:" + attempts);
         second_card_clicked = this;
+        // $('.card').toggleClass('flipped');
         second_card_back = second_card_clicked;
         // $(second_card_clicked).find('.back').addClass('flipped');
         second_card = $(this).find('.front').find('img').attr('src');
@@ -99,7 +103,6 @@ function card_clicked() {
                 return "Keep Going."
             }
         }
-
         // If cards do not match
         else {
             console.log("They did not match.");
@@ -111,9 +114,40 @@ function card_clicked() {
     display_stats();
 }
 
-// Wanted to add a randomize/shuffles the cards
-function randomize_cards() {
+// Deck
+const cards = [
+    'images/rick_front.png',
+    'images/mortysmith_front.jpg',
+    'images/presidentminiverse_front.png',
+    'images/birdperson3_front.png',
+    'images/mrmeseeks_front.png',
+    'images/gromflomite_front.png',
+    'images/zeep_front.png',
+    'images/snowball_front.jpg',
+    'images/summersmith_front.png',
+    'images/evilmorty_front.png',
+    'images/tinyrick.png',
+    'images/jerrysmith_front.jpg',
+];
+let dealt_cards = [];
 
+// Card Shuffle
+function card_shuffle() {
+    let card_deck = cards.slice(0).concat(cards.slice(0));
+    let remaining_deck = card_deck.length;
+    let deck_index = 0;
+    while(remaining_deck) {
+        deck_index = Math.floor(Math.random()*remaining_deck--);
+        dealt_cards.push(card_deck.splice(deck_index, 1)[0]);
+        }
+    return dealt_cards;
+}
+
+// Card Deal
+function deal_cards() {
+    $(".front img").each(function () {
+        $(this).attr('src', dealt_cards.pop())
+    });
 }
 
 // Card flip
