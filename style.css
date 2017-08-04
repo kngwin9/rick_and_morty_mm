@@ -44,10 +44,10 @@ body {
 
     /*margin: 2% 8% 2% 10%;*/
 }
-.front {
+.back {
     position: absolute;
 }
-.back {
+.front {
 }
 img {
     height: 165px;
@@ -82,7 +82,7 @@ img {
     /*-o-backface-visibility: hidden;*/
     backface-visibility: hidden;
 }
-.card .front {
+.card .back {
 
     -webkit-transform: rotateY( 180deg );
     -moz-transform: rotateY( 180deg );

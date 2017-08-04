@@ -14,10 +14,10 @@ $(document).ready(initialize_game);
 
 // Initializes the game
 function initialize_game() {
-    initial_click_handler();
-    display_stats();
     card_shuffle(cards);
     deal_cards();
+    initial_click_handler();
+    display_stats();
 }
 
 // For click handlers
@@ -54,15 +54,15 @@ function reset_stats() {
     display_stats();
 }
 
-// Function that flips the card back.
+// Function that flips the card front.
 // function card_flipback() {
-//     $('.back').removeClass('');
+//     $('.front').removeClass('');
 // }
 
-// Flips individual unmatched cards back
+// Flips individual unmatched cards front
 // function single_card_flipback() {
-//     $(first_card_back).find('.back').toggleClass('flipper');
-//     $(second_card_back).find('.back').toggleClass('flipper');
+//     $(first_card_back).find('.front').toggleClass('flipper');
+//     $(second_card_back).find('.front').toggleClass('flipper');
 // }
 
 // Show card when clicked function
@@ -71,10 +71,10 @@ function card_clicked() {
     if (first_card_clicked === null) {
         console.log("The first card was clicked.");
         first_card_clicked = this;
-        // $(first_card_clicked).find('.back').addClass('flipped');
+        // $(first_card_clicked).find('.front').addClass('flipped');
         // $('.card').toggleClass('flipped');
         first_card_back = first_card_clicked;
-        first_card = $(this).find('.front').find('img').attr('src');
+        first_card = $(this).find('.back').find('img').attr('src');
         attempts++;
     }
     else {
@@ -83,8 +83,8 @@ function card_clicked() {
         second_card_clicked = this;
         // $('.card').toggleClass('flipped');
         second_card_back = second_card_clicked;
-        // $(second_card_clicked).find('.back').addClass('flipped');
-        second_card = $(this).find('.front').find('img').attr('src');
+        // $(second_card_clicked).find('.front').addClass('flipped');
+        second_card = $(this).find('.back').find('img').attr('src');
 
         // First and second card comparison
         if (first_card === second_card) {
@@ -139,13 +139,13 @@ function card_shuffle() {
     while(remaining_deck) {
         deck_index = Math.floor(Math.random()*remaining_deck--);
         dealt_cards.push(card_deck.splice(deck_index, 1)[0]);
-        }
+    }
     return dealt_cards;
 }
 
 // Card Deal
 function deal_cards() {
-    $(".front img").each(function () {
+    $(".back img").each(function () {
         $(this).attr('src', dealt_cards.pop())
     });
 }
