@@ -154,6 +154,4 @@ function deal_cards() {
 function card_flip(card) {
     console.log("testing card flip");
     $(card).toggleClass('flipped');
-    // $(this).find('.card').toggleClass('flipped');
-
 }
