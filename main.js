@@ -67,7 +67,7 @@ function reset_stats() {
 
 // Show card when clicked function
 function card_clicked() {
-    card_flip();
+    card_flip(this);
     if (first_card_clicked === null) {
         console.log("The first card was clicked.");
         first_card_clicked = this;
@@ -151,9 +151,9 @@ function deal_cards() {
 }
 
 // Card flip
-function card_flip() {
+function card_flip(card) {
     console.log("testing card flip");
-    $('.card').toggleClass('flipped');
+    $(card).toggleClass('flipped');
     // $(this).find('.card').toggleClass('flipped');
 
 }
