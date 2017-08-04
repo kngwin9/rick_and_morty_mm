@@ -35,8 +35,11 @@ function display_stats() {
 
 // For reset button
 function reset_button() {
+    all_card_flipback();
     games_played++;
     reset_stats();
+    setTimeout(card_shuffle(cards), 1000);
+    setTimeout(deal_cards, 1000);
 }
 
 // Function that resets the stats
@@ -46,7 +49,6 @@ function reset_stats() {
     attempts = 0;
     first_card_clicked = null;
     second_card_clicked = null;
-    card_shuffle();
     display_stats();
 }
 
@@ -54,6 +56,9 @@ function reset_stats() {
 function card_flipback() {
     $(first_card_back).removeClass('flipped');
     $(second_card_back).removeClass('flipped');
+}
+function all_card_flipback() {
+    $(".card").removeClass('flipped');
 }
 
 // Show card when clicked function
