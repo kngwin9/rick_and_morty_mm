@@ -47,12 +47,10 @@ body {
 .back {
     position: absolute;
 }
-.front {
-}
+
 img {
     height: 165px;
     width: 120px;
-
     border-radius: 20px;
 }
 .matched {
@@ -83,7 +81,6 @@ img {
     backface-visibility: hidden;
 }
 .card .back {
-
     -webkit-transform: rotateY( 180deg );
     -moz-transform: rotateY( 180deg );
     -o-transform: rotateY( 180deg );

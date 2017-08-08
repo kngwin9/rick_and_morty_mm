@@ -140,3 +140,11 @@ function deal_cards() {
 function card_flip(card) {
     $(card).toggleClass('flipped');
 }
+
+function disable_flip() {
+    console.log("Disabled");
+}
+
+function allow_flip() {
+    console.log("Allowed");
+}
