@@ -9,6 +9,7 @@ body {
     height: 100%;
     width: 100%;
 }
+
 /* Header Start */
 #header-container {
     height: 180px;
@@ -104,26 +105,26 @@ button {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 770px) {
-    #header-container {
-        height: 100px;
-    }
-    #game-title {
-        background-image: url(images/rickandmorty_banner.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 300px;
-        flex: 2;
-    }
-    #game-logo {
-        order: 2;
-        background-image: url(images/rickandmorty_logo2.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        min-width: 90px;
-        min-height: 70px;
-    }
-}
+/*@media only screen and (min-width: 770px) {*/
+    /*#header-container {*/
+        /*height: 100px;*/
+    /*}*/
+    /*#game-title {*/
+        /*background-image: url(images/rickandmorty_banner.png);*/
+        /*background-repeat: no-repeat;*/
+        /*background-position: center;*/
+        /*background-size: 300px;*/
+        /*flex: 2;*/
+    /*}*/
+    /*#game-logo {*/
+        /*order: 2;*/
+        /*background-image: url(images/rickandmorty_logo2.png);*/
+        /*background-repeat: no-repeat;*/
+        /*background-position: center;*/
+        /*min-width: 90px;*/
+        /*min-height: 70px;*/
+    /*}*/
+/*}*/
 
 /* Font */
 @font-face {
