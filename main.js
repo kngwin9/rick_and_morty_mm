@@ -64,13 +64,11 @@ function all_card_flipback() {
 // Show card when clicked function
 function card_clicked() {
     card_flip(this);
-
     if (first_card_clicked === null) {
         first_card_clicked = this;
         first_card_back = first_card_clicked;
         first_card = $(this).find('.back').find('img').attr('src');
         attempts++;
-        // $(this).off();
         disable_flip(this);
 
     }
@@ -78,7 +76,6 @@ function card_clicked() {
         second_card_clicked = this;
         second_card_back = second_card_clicked;
         second_card = $(this).find('.back').find('img').attr('src');
-        // $(this).off();
         disable_flip(this);
 
         // First and second card comparison
@@ -98,13 +95,13 @@ function card_clicked() {
         }
         // If cards do not match
         else {
-            setTimeout(card_flipback, 1000);
             allow_flip(first_card_clicked, second_card_clicked);
+            setTimeout(card_flipback, 800);
             first_card_clicked = null;
             second_card_clicked = null;
         }
+        display_stats();
     }
-    display_stats();
 }
 
 // Deck
