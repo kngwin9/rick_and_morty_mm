@@ -64,16 +64,22 @@ function all_card_flipback() {
 // Show card when clicked function
 function card_clicked() {
     card_flip(this);
+
     if (first_card_clicked === null) {
         first_card_clicked = this;
         first_card_back = first_card_clicked;
         first_card = $(this).find('.back').find('img').attr('src');
         attempts++;
+        // $(this).off();
+        disable_flip(this);
+
     }
     else {
         second_card_clicked = this;
         second_card_back = second_card_clicked;
         second_card = $(this).find('.back').find('img').attr('src');
+        // $(this).off();
+        disable_flip(this);
 
         // First and second card comparison
         if (first_card === second_card) {
@@ -93,6 +99,7 @@ function card_clicked() {
         // If cards do not match
         else {
             setTimeout(card_flipback, 1000);
+            allow_flip(first_card_clicked, second_card_clicked);
             first_card_clicked = null;
             second_card_clicked = null;
         }
@@ -141,10 +148,13 @@ function card_flip(card) {
     $(card).toggleClass('flipped');
 }
 
-function disable_flip() {
+function disable_flip(card) {
     console.log("Disabled");
+    $(card).off();
 }
 
-function allow_flip() {
-    console.log("Allowed");
+function allow_flip(card1, card2) {
+    console.log("Flip On");
+    $(card1).on('click', card_clicked);
+    $(card2).on('click', card_clicked);
 }
