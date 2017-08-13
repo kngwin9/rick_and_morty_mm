@@ -22,7 +22,7 @@ function initialize_game() {
 
 // For click handlers
 function initial_click_handler() {
-    $('.card').click(card_clicked);
+    $('.cards').click(card_clicked);
     $('#button_reset_game').click(reset_button);
 }
 
@@ -58,7 +58,7 @@ function card_flipback() {
     $(second_card_back).removeClass('flipped');
 }
 function all_card_flipback() {
-    $(".card").removeClass('flipped');
+    $(".cards").removeClass('flipped');
 }
 
 // Show card when clicked function
