@@ -96,7 +96,7 @@ function card_clicked() {
         // If cards do not match
         else {
             allow_flip(first_card_clicked, second_card_clicked);
-            setTimeout(card_flipback, 800);
+            setTimeout(card_flipback, 700);
             first_card_clicked = null;
             second_card_clicked = null;
         }
