@@ -6,41 +6,37 @@ body {
 }
 #main-content {
     height: 35rem;
-    background-color: #FFFFFF;
+
 }
 
 /* Header Start */
 #header-container {
-    height: 10rem;
+    height: 13rem;
 }
 #game-title {
     background-image: url(images/rickandmorty_banner.png);
     background-repeat: no-repeat;
-    background-color: #0A7D67;
+
 }
 #game-logo {
     background-image: url(images/rickandmorty_logo2.png);
     background-repeat: no-repeat;
-    background-color: #0e90d2;
 }
 
 /* Game Area */
 #game-area-cont {
-    /*margin: 2% 0 0 10%;*/
-    /*display: flex;*/
     max-width: 1000px;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: #0e90d2;
+    margin: auto;
 }
 .back {
     position: absolute;
+
 }
 img {
     height: 165px;
     width: 120px;
     border-radius: 20px;
+    padding: 1%;
 }
 .matched {
     display: none;
@@ -80,10 +76,11 @@ img {
 
 /* Stats Container Start */
 #stats-container {
+    margin: 2% 5% 0 0;
     letter-spacing: 5px;
     font-family: rickandmortyfont;
     font-size: 23px;
-    background-color: darkred;
+    background-color: lightgrey;
 }
 button {
     font-family: rickandmortyfont;
