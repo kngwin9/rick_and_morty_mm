@@ -5,36 +5,37 @@ body {
     background-attachment: fixed;
 }
 #main-content {
-    height: 35rem;
-
+    height: 25rem;
 }
 
 /* Header Start */
 #header-container {
-    height: 13rem;
+    height: 8rem;
 }
 #game-title {
     background-image: url(images/rickandmorty_banner.png);
     background-repeat: no-repeat;
-
+    background-size: 30rem 8rem;
+    margin-left: -50px;
 }
 #game-logo {
     background-image: url(images/rickandmorty_logo2.png);
     background-repeat: no-repeat;
+    background-size: 14rem 10rem;
 }
 
 /* Game Area */
 #game-area-cont {
-    max-width: 1000px;
-    margin: auto;
+    max-width: 850px;
+    margin-left: 55px;
 }
 .back {
     position: absolute;
 
 }
 img {
-    height: 165px;
-    width: 120px;
+    height: 8em;
+    width: 6em;
     border-radius: 20px;
     padding: 1%;
 }
@@ -76,43 +77,37 @@ img {
 
 /* Stats Container Start */
 #stats-container {
-    margin: 2% 5% 0 0;
+    margin: 20px 0 0 100px;
     letter-spacing: 5px;
     font-family: rickandmortyfont;
     font-size: 23px;
-    background-color: lightgrey;
 }
 button {
     font-family: rickandmortyfont;
-    font-size: 23px;
-    height: 100%;
-    width: 100%;
-    margin: 5%;
-    padding: 5%;
+    font-size: 15px;
     letter-spacing: 5px;
 }
 
 /* Media Queries */
-/*@media only screen and (min-width: 770px) {*/
-    /*#header-container {*/
-        /*height: 100px;*/
-    /*}*/
-    /*#game-title {*/
-        /*background-image: url(images/rickandmorty_banner.png);*/
-        /*background-repeat: no-repeat;*/
-        /*background-position: center;*/
-        /*background-size: 300px;*/
-        /*flex: 2;*/
-    /*}*/
-    /*#game-logo {*/
-        /*order: 2;*/
-        /*background-image: url(images/rickandmorty_logo2.png);*/
-        /*background-repeat: no-repeat;*/
-        /*background-position: center;*/
-        /*min-width: 90px;*/
-        /*min-height: 70px;*/
-    /*}*/
-/*}*/
+@media only screen and (max-width: 1100px) {
+    #stats-container {
+        display: flex;
+        color: white;
+        margin-top: 75px;
+    }
+
+    #stats-container h3 {
+        font-size: 20px;
+    }
+
+    #stats-container h2 {
+        font-size: 20px;
+    }
+
+    #stats-container p {
+        font-size: 20px;
+    }
+}
 
 /* Font */
 @font-face {
